@@ -1,0 +1,78 @@
+body {
+    font-family: 'VT323', monospace;
+    background-color: #002c22; /* Fallback color */
+    background-image: url('Logo.png'); /* Relative file path */
+    background-size: 50vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #87c67a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5vw;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scrolling */
+}
+
+h1, h2, h3 {
+    color: #2bf4e3;
+}
+
+.scan-line-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Create the scan lines */
+.scan-line-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        rgba(255, 255, 255, 0.1) 0,
+        rgba(255, 255, 255, 0.1) 1.5px,
+        transparent 1.5px,
+        transparent 3px
+    );
+    pointer-events: none; /* Allows interaction with underlying elements */
+}
+
+header {
+    padding: 10px;
+    margin: 10px;
+    border: 0.2vw solid #2bf4e3;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-banner {
+    display: flex;
+    align-items: left;
+    width: 100%;
+    color: #077056;
+    font-size: 1vw;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.main-container {
+    flex: 1; /* Allow main container to take remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px; /* Add padding if needed */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.main-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
